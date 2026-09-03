@@ -77,3 +77,4 @@ Plugins/**/Binaries/**/*.exp
 *.rsp
 *.dep.json
 
+*.zip
