@@ -169,20 +169,8 @@ Content/
 
 ---
 
-### Step 3.2: Turn On the Real-World Camera Feed
-1. Open **`BP_VRPawn`**.
-2. In the Components panel, click **`+ Add`**.
-3. Search for: **`OculusXRPassthroughLayer`** and add it.
-4. In Details:
-   - **Stereo Layer Shape**: Select **`Reconstructed Passthrough Layer`** *(streams your full 360° physical room environment!)*.
-   - **Layer Placement**: Set to **`Underlay`**.
-   - *(Note: Ignore any yellow advisory message about persistent subsystems — this component works immediately and reliably)*.
-5. Click **Compile & Save**.
-
----
-
-### Step 3.3: Peel Away the Virtual Sky & Walls
-1. Make sure you are in **`LVL_TargetGame_MR`**.
+### Step 3.2: Peel Away the Virtual Sky & Walls
+1. Make sure you have **`LVL_TargetGame_MR`** open.
 2. Look at the **Outliner** panel on the top-right:
 3. Select and **Delete (`Delete` key)** the virtual background actors:
    - ❌ **`SkyAtmosphere`**
@@ -195,7 +183,7 @@ Content/
 
 ---
 
-### Step 3.4: Place Real-Room Targets
+### Step 3.3: Place Real-Room Targets
 1. In the Content Drawer, navigate to:  
    `Content/TargetGame/Blueprints/`
 2. **Drag and drop `BP_Target` 3 to 5 times** directly into the level viewport:
@@ -207,27 +195,38 @@ Content/
 
 ---
 
-### Step 3.5: Enable Real-Room Collision (The Ultimate "WOW Factor" — MRUK)
-*Goal: Turn your scanned physical walls, tables, couch, and floor into real-time physics colliders! When bullets miss a target, they physically bounce off your actual classroom furniture!*
+### Step 3.4: Add the Real-Room Mesh Spawner (MRUK)
+*Goal: Turn your scanned physical walls, tables, couch, and floor into real-time physics colliders!*
 
-1. **Add the Room Mesh Spawner:**
-   - In Unreal Editor, open the Place Actors window: **Window ➔ Place Actors** *(or `Ctrl + Shift + 1`)*.
-   - Search for: **`Anchor Actor Spawner`** *(MR Utility Kit Anchor Actor Spawner)*.
-   - Drag and drop it directly into your `LVL_TargetGame_MR` viewport.
-2. **Configure Spawner Details:**
-   - With `MRUKAnchorActorSpawner` selected, look at the **Details** panel:
-     - **Spawn Mode**: Set to **`All Rooms`**.
-     - **Procedural Material**: Click the dropdown ➔ select **`MI_Highlights_Translucent`** *(enables crystal-clear passthrough with active 3D collision!)*.
-     - **Should Fallback To Procedural**: Ensure it is checked **`[x]`**.
-3. **Load the Room on Startup:**
-   - On the top toolbar, click the **Blueprints icon** ➔ **Open Level Blueprint**.
-   - Right-click on empty graph space ➔ search for **`Load Scene From Device`** *(under MR Utility Kit)*.
-   - On the `Load Scene From Device` node: Set **Scene Model** to **`V2`**.
-   - Connect `Event BeginPlay` directly into `Load Scene From Device`:
-     ```text
-     [ Event BeginPlay ] ➔ [ Load Scene From Device (Scene Model: V2) ]
-     ```
-   - Click **Compile & Save**, then close the Level Blueprint.
+1. In Unreal Editor, open the Place Actors window: **Window ➔ Place Actors** *(or `Ctrl + Shift + 1`)*.
+2. Search for: **`Anchor Actor Spawner`** *(MR Utility Kit Anchor Actor Spawner)*.
+3. **Drag and drop it directly into your `LVL_TargetGame_MR` level viewport.**
+4. With `MRUKAnchorActorSpawner` selected, look at the **Details** panel:
+   - **Spawn Mode**: Set to **`All Rooms`**.
+   - **Procedural Material**: Click the dropdown ➔ select **`MI_Highlights_Translucent`** *(enables crystal-clear passthrough with active 3D collision!)*.
+   - **Should Fallback To Procedural**: Ensure it is checked **`[x]`**.
+
+---
+
+### Step 3.5: Initialize Passthrough & Room Collision in Blueprint
+*Goal: Turn on the live cameras and load the room collision asynchronously on startup.*
+
+1. On the top toolbar of `LVL_TargetGame_MR`, click the **Blueprints icon** ➔ **Open Level Blueprint**.
+2. **Add the Nodes:**
+   - Right-click ➔ search: **`Load Scene From Device Async`** *(MR Utility Kit)*.
+     - Set **Scene Model** to: **`V2Fallback V1`** *(smart fallback: tries high-res V2 first, falls back to V1 if needed!)*.
+   - Right-click ➔ search: **`Get Passthrough Subsystem`**.
+   - Right-click ➔ search: **`Initialize Persistent Passthrough`**.
+3. **Wire the Graph:**
+   - Connect **`Event BeginPlay`** into **`Load Scene From Device Async`**.
+   - Connect the top execution pin of `Load Scene From Device Async` into **`Initialize Persistent Passthrough`**.
+   - Connect **`Passthrough Subsystem`** into the **`Target`** pin of `Initialize Persistent Passthrough`:
+   ```text
+   [ Event BeginPlay ] ➔ [ LoadSceneFromDeviceAsync (V2Fallback V1) ] ➔ [ Initialize Persistent Passthrough ]
+                                                                                   ▲
+                                                       [ Get Passthrough Subsystem ]
+   ```
+4. Click **Compile & Save**, then close the Level Blueprint.
 
 ---
 
