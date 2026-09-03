@@ -75,15 +75,14 @@ Content/
 
 1. In the Content Drawer, navigate to:  
    `Content/FirstPerson/Maps/` ➔ Double-click **`FirstPersonMap`**.
-2. *(Verify Default Pawn)*: In the **World Settings** panel on the right, under **GameMode Override**, ensure **Default Pawn Class** is set to **`BP_FirstPersonCharacter`** *(so you have full WASD walk, sprint, and jump capabilities!)*.
-3. Click the green **Play** button on the top toolbar to play directly in the editor viewport.
-4. **Controls:**
+2. Click the green **Play** button on the top toolbar to play directly in the editor viewport.
+3. **Controls:**
    - **`W`, `A`, `S`, `D`**: Move around the 3D arena.
    - **`Spacebar`**: Jump.
    - **`Mouse`**: Look around.
    - **`Left Mouse Click`**: Shoot the blaster rifle at targets.
-5. Shoot a target — notice how the projectile flies and the target shatters into pieces!
-6. Press **`Esc`** on the keyboard to exit play mode.
+4. Shoot a target — notice how the projectile flies and the target shatters into pieces!
+5. Press **`Esc`** on the keyboard to exit play mode.
 
 > **💡 Learning Takeaway:**  
 > In a traditional PC game, the camera is locked to your 2D mouse, and the gun is glued to a fixed position on the screen.
