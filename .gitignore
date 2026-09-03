@@ -64,3 +64,16 @@ $RECYCLE.BIN/
 !Content/**
 !Plugins/
 !Plugins/**
+
+# ------------------------------------------
+# Plugin Handling: Keep DLLs, Exclude PDBs & Intermediate
+# (Must be placed after !Plugins/** to take precedence)
+# ------------------------------------------
+Plugins/**/Intermediate/
+Plugins/**/Binaries/**/*.pdb
+Plugins/**/Binaries/**/*.exp
+*.pdb
+*.sarif
+*.rsp
+*.dep.json
+
