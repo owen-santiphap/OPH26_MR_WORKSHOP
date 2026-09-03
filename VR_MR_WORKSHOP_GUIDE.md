@@ -28,6 +28,7 @@ Content/
 │       └── BP_FirstPersonProjectile <-- Projectile used to shatter targets
 │
 ├── TargetGame/
+│   ├── Audio/                      <-- 🔊 Sound effects (Blaster fire, Target shatter, Bounce)
 │   ├── Blueprints/
 │   │   ├── BP_Target               <-- 🎯 Target that shatters when shot
 │   │   └── BP_TargetGameMode       <-- Game rules and score tracking
@@ -42,7 +43,6 @@ Content/
 │           └── LVL_TargetGame_MR   <-- 🌌 STAGE 3: Mixed Reality Level
 │
 └── FPWeapon/
-    ├── Audio/                      <-- Weapon sound effects
     └── Mesh/
         └── SK_FPGun                <-- 🔫 Blaster 3D mesh
 ```
