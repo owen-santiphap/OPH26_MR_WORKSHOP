@@ -75,13 +75,15 @@ Content/
 
 1. In the Content Drawer, navigate to:  
    `Content/FirstPerson/Maps/` ➔ Double-click **`FirstPersonMap`**.
-2. Click the green **Play** button on the top toolbar to play directly in the editor viewport.
-3. **Controls:**
+2. *(Verify Default Pawn)*: In the **World Settings** panel on the right, under **GameMode Override**, ensure **Default Pawn Class** is set to **`BP_FirstPersonCharacter`** *(so you have full WASD walk, sprint, and jump capabilities!)*.
+3. Click the green **Play** button on the top toolbar to play directly in the editor viewport.
+4. **Controls:**
    - **`W`, `A`, `S`, `D`**: Move around the 3D arena.
+   - **`Spacebar`**: Jump.
    - **`Mouse`**: Look around.
    - **`Left Mouse Click`**: Shoot the blaster rifle at targets.
-4. Shoot a target — notice how the projectile flies and the target shatters into pieces!
-5. Press **`Esc`** on the keyboard to exit play mode.
+5. Shoot a target — notice how the projectile flies and the target shatters into pieces!
+6. Press **`Esc`** on the keyboard to exit play mode.
 
 > **💡 Learning Takeaway:**  
 > In a traditional PC game, the camera is locked to your 2D mouse, and the gun is glued to a fixed position on the screen.
@@ -171,7 +173,10 @@ Content/
 1. Open **`BP_VRPawn`**.
 2. In the Components panel, click **`+ Add`**.
 3. Search for: **`OculusXRPassthroughLayer`** and add it.
-4. In Details: verify **Passthrough Layer Type** is set to **`Underlay`**.
+4. In Details:
+   - **Stereo Layer Shape**: Select **`Reconstructed Passthrough Layer`** *(streams your full 360° physical room environment!)*.
+   - **Layer Placement**: Set to **`Underlay`**.
+   - *(Note: Ignore any yellow advisory message about persistent subsystems — this component works immediately and reliably)*.
 5. Click **Compile & Save**.
 
 ---
@@ -202,6 +207,30 @@ Content/
 
 ---
 
+### Step 3.5: Enable Real-Room Collision (The Ultimate "WOW Factor" — MRUK)
+*Goal: Turn your scanned physical walls, tables, couch, and floor into real-time physics colliders! When bullets miss a target, they physically bounce off your actual classroom furniture!*
+
+1. **Add the Room Mesh Spawner:**
+   - In Unreal Editor, open the Place Actors window: **Window ➔ Place Actors** *(or `Ctrl + Shift + 1`)*.
+   - Search for: **`Anchor Actor Spawner`** *(MR Utility Kit Anchor Actor Spawner)*.
+   - Drag and drop it directly into your `LVL_TargetGame_MR` viewport.
+2. **Configure Spawner Details:**
+   - With `MRUKAnchorActorSpawner` selected, look at the **Details** panel:
+     - **Spawn Mode**: Set to **`All Rooms`**.
+     - **Procedural Material**: Click the dropdown ➔ select **`MI_Highlights_Translucent`** *(enables crystal-clear passthrough with active 3D collision!)*.
+     - **Should Fallback To Procedural**: Ensure it is checked **`[x]`**.
+3. **Load the Room on Startup:**
+   - On the top toolbar, click the **Blueprints icon** ➔ **Open Level Blueprint**.
+   - Right-click on empty graph space ➔ search for **`Load Scene From Device`** *(under MR Utility Kit)*.
+   - On the `Load Scene From Device` node: Set **Scene Model** to **`V2`**.
+   - Connect `Event BeginPlay` directly into `Load Scene From Device`:
+     ```text
+     [ Event BeginPlay ] ➔ [ Load Scene From Device (Scene Model: V2) ]
+     ```
+   - Click **Compile & Save**, then close the Level Blueprint.
+
+---
+
 ## 🏆 The Climax: Experience Mixed Reality!
 
 1. On the top toolbar, click the **`...`** (three dots) next to Play ➔ select **VR Preview**.
@@ -213,6 +242,7 @@ Content/
    - Aim your blaster, pull the Quest controller trigger:
      - **PEW!** The projectile flies through your physical room.
      - **CRACK!** The target shatters into real-time physics shards right in front of your friends!
+     - **BOUNCE!** If a shot misses, it physically hits your **actual real-world desk or floor and bounces realistically across the classroom!**
      - The scoreboard records the hit!
 
 ---
@@ -221,6 +251,7 @@ Content/
 
 | Issue | Root Cause | Quick Fix |
 |---|---|---|
+| Cannot move with WASD on desktop (Stage 1) | GameMode Default Pawn is set to VR Pawn | In `FirstPersonMap` World Settings, set **Default Pawn Class** to **`BP_FirstPersonCharacter`**. |
 | Headset view is completely pitch black | Meta Quest Link PC app blocked cameras | In the Oculus desktop app on PC: **Settings ➔ Beta**: turn **Enable Passthrough over Meta Quest Link** to **ON**. |
 | Blaster appears attached to the left hand | `MotionController_R` has default motion source | In `BP_VRPawn`, select `MotionController_R` and set **Motion Source** to **`RightAim`**. |
 | Blaster points sideways or towards the floor | Skeletal mesh bone orientation | In `BP_VRPawn`, select `SK_FPGun` and set Rotation to `(Pitch=0, Yaw=0, Roll=-90)`. |
@@ -228,3 +259,5 @@ Content/
 | Targets and blaster are completely black | Missing light source | In `LVL_TargetGame_MR`, ensure a **Directional Light** is in the level (Quick Add ➔ Lights ➔ Directional Light). |
 | Virtual sky/blackness covers the physical room | Opaque sky actor still in the level | In `LVL_TargetGame_MR` Outliner, delete `SkyAtmosphere`, `VolumetricCloud`, and `ExponentialHeightFog`. |
 | Trigger does nothing | Enhanced Input mapping not added | In `BP_VRPawn` BeginPlay, ensure `Enhanced Input Local Player Subsystem` calls `Add Mapping Context` with `IMC_VR`. |
+| Projectiles don't bounce off real tables / walls | Spatial data permission or spawner missing | 1. In PC Oculus app: **Settings ➔ Beta ➔ turn ON Share Meta Quest Point Cloud / Spatial Data**.<br>2. Ensure `MRUKAnchorActorSpawner` is in the level with `Procedural Material = MI_Highlights_Translucent`.<br>3. Ensure Level Blueprint runs `Load Scene From Device (V2)`. |
+| Room mesh shows up as giant gray boxes | Spawner procedural material left on None | In `MRUKAnchorActorSpawner`, set **Procedural Material** to **`MI_Highlights_Translucent`**. |
