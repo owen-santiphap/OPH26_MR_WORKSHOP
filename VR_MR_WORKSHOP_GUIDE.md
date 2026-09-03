@@ -67,7 +67,7 @@ Content/
 ### Step 1.1: Open the VR Pawn
 1. In the Content Drawer, navigate to:  
    `Content/TargetGame/VR_MR/Blueprints/`
-2. Create or open **`BP_VRPawn`** (Parent class: `Pawn`).
+2. Double-click to open **`BP_VRPawn`** *(pre-created for you — no folder or asset creation needed!)*.
 3. Verify the component hierarchy:
    ```text
    [Root] DefaultSceneRoot
@@ -136,9 +136,10 @@ In `BP_VRPawn` ➔ **Event Graph**:
 3. In Details:
    - Verify **Passthrough Layer Type** is set to `Underlay` (default).
 
-### Step 3.2: Create the MR Level
-1. Go to `Content/TargetGame/VR_MR/Levels/`.
-2. Create a new empty level: **`LVL_TargetGame_MR`** (File ➔ New Level ➔ Empty Level).
+### Step 3.2: Open the MR Level
+1. In the Content Drawer, navigate to:  
+   `Content/TargetGame/VR_MR/Levels/`
+2. Double-click to open **`LVL_TargetGame_MR`** *(pre-created for you — no folder or level creation needed!)*.
 3. In **World Settings** (Window ➔ World Settings):
    - **GameMode Override**: `BP_TargetGameMode`
    - **Default Pawn Class**: `BP_VRPawn`
