@@ -1,175 +1,219 @@
-# 🥽 VR & Mixed Reality Target Game — Workshop Guide (Open House)
+# 🥽 From Desktop FPS to Mixed Reality — Workshop Guide
 
-> **Workshop:** First-Person to Mixed Reality Target Game  
-> **Audience:** University Open House (High School Students & Beginners)  
-> **Philosophy:** **100% Drag-and-Drop & Zero-Friction Settings**
+> **Audience:** High School Students & Beginners (University Open House)  
+> **Mission:** Transform a standard desktop PC game into full 6DOF VR, then peel back virtual reality into Mixed Reality!  
+> **Educational Philosophy:** Learn by doing — See the direct cause-and-effect of each technology upgrade.
+
+---
+
+## 🗺️ The 3-Stage Transformation Journey
+
+```text
+[ Stage 1: Play PC Game ] ➔ [ Stage 2: Upgrade to VR ] ➔ [ Stage 3: Mixed Reality ]
+   WASD + Mouse on PC          Headset + 6DOF Hand          Peel Sky to See Classroom
+```
 
 ---
 
 ## 📁 Project Directory Structure
 
-All VR and Mixed Reality workshop assets live strictly inside the `VR_MR` subfolder to keep the workspace organized:
+All VR and Mixed Reality workshop assets live inside the `VR_MR` subfolder to keep the workspace organized:
 
 ```text
 Content/
-├── TargetGame/
-│   ├── Blueprints/               <-- Existing PC Game: BP_Target, BP_TargetGameMode, BP_SpawnManager
-│   ├── Levels/                   <-- Existing PC levels
-│   ├── Target/                   <-- Target materials and textures
-│   ├── UI/                       <-- WBP_HUD
-│   │
-│   └── VR_MR/                    <-- ✨ WORKSHOP FOCUS AREA
-│       ├── Blueprints/           <-- BP_VRPawn
-│       ├── Input/                <-- IA_Shoot_VR, IMC_VR
-│       └── Levels/               <-- LVL_TargetGame_MR
-│
 ├── FirstPerson/
-│   └── Blueprints/               <-- BP_FirstPersonProjectile (used to shoot targets)
+│   ├── Maps/
+│   │   └── FirstPersonMap          <-- 🎮 STAGE 1: Standard Desktop 3D Map
+│   └── Blueprints/
+│       └── BP_FirstPersonProjectile <-- Projectile used to shatter targets
+│
+├── TargetGame/
+│   ├── Blueprints/
+│   │   ├── BP_Target               <-- 🎯 Target that shatters when shot
+│   │   └── BP_TargetGameMode       <-- Game rules and score tracking
+│   │
+│   └── VR_MR/                      <-- ✨ WORKSHOP FOCUS AREA
+│       ├── Blueprints/
+│       │   └── BP_VRPawn           <-- 🥽 STAGE 2: VR Pawn with tracked hands
+│       ├── Input/
+│       │   ├── IA_Shoot_VR         <-- Enhanced Input Action (Trigger)
+│       │   └── IMC_VR              <-- Input Mapping Context (Quest Controller)
+│       └── Levels/
+│           └── LVL_TargetGame_MR   <-- 🌌 STAGE 3: Mixed Reality Level
+│
 └── FPWeapon/
-    ├── Audio/                    <-- FirstPersonTemplateWeaponFire02 (gunshot sound)
-    └── Mesh/                     <-- SK_FPGun (blaster 3D mesh)
+    ├── Audio/                      <-- Weapon sound effects
+    └── Mesh/
+        └── SK_FPGun                <-- 🔫 Blaster 3D mesh
 ```
 
 ---
 
-## 🛠️ Part 0: Instructor Pre-Flight Setup (Done before students arrive)
+## 🛠️ Part 0: Instructor Pre-Flight Setup (Before Students Arrive)
 
 > [!NOTE]
-> All complex engine settings are already permanently pre-configured in `Config/DefaultEngine.ini` and `VR_MR_Workshop.uproject`:
+> All complex engine settings are already permanently pre-configured in `Config/DefaultEngine.ini`:
 > - **MetaXR Plugin**: Enabled
 > - **Forward Shading & MSAA**: Enabled
 > - **Insight Passthrough**: `bInsightPassthroughEnabled=True`
-> - **Passthrough Alpha Pipeline**: `bEnableAlphaChannelInPostProcessing=True`, `r.PostProcessing.PropagateAlpha=1`, and `r.Mobile.PropagateAlpha=True` (Pre-configured for real-world Passthrough!)
+> - **Passthrough Alpha Pipeline**: `bEnableAlphaChannelInPostProcessing=True`, `r.PostProcessing.PropagateAlpha=1`, and `r.Mobile.PropagateAlpha=True`
 > 
 > Students do **NOT** need to open Project Settings!
 
 ### Instructor Checklist on Host PCs:
-1. Connect Meta Quest 2 / 3 / Pro via **USB-C Link Cable** or **Air Link**.
+1. Connect the Meta Quest headset via **USB-C Link Cable** or **Air Link**.
 2. Open the **Meta Quest Link (Oculus) PC App**:
    - Go to **Settings ➔ General**: Ensure **OpenXR Runtime** is set to **Meta Quest Link** (Active).
-   - Go to **Settings ➔ Beta**: Toggle **Enable Passthrough over Meta Quest Link** to **ON** (Required for the PC to receive real-world camera feeds).
-3. In Unreal Engine: Check that the Play button dropdown has **VR Preview** available.
-
-> [!IMPORTANT]
-> ### 🌌 Why is the Sky Black on the PC Monitor (Only Clouds Visible)?
-> When `r.PostProcessing.PropagateAlpha=1` is active for Mixed Reality, Unreal sets the sky atmosphere to **transparent (`Alpha = 0`)**:
-> - **Inside the Quest Headset:** That `Alpha = 0` area is where your **real physical classroom** appears through the Passthrough cameras!
-> - **On the PC Monitor:** Because your PC monitor has no real-world camera feed to composite behind the game, Unreal fills the transparent background with **solid black**, leaving only the 3D clouds (`Alpha > 0`) visible.
-> - **Quick PC Toggle:** If you want to preview the original blue PC sky on desktop, press **`~`** (console) in the editor and type:
->   - `r.PostProcessing.PropagateAlpha 0` ➔ Restores normal blue sky for PC testing.
->   - `r.PostProcessing.PropagateAlpha 1` ➔ Restores Mixed Reality Passthrough transparency.
+   - Go to **Settings ➔ Beta**: Toggle **Enable Passthrough over Meta Quest Link** to **ON** *(Required for the PC to receive real-world camera feeds)*.
+3. In Unreal Engine: Verify that clicking the `...` next to the Play button shows **VR Preview** available.
 
 ---
 
-## 🚀 Student Module 1: Hold the Blaster (5 Mins)
-*Goal: Visual gratification. See real hand movements tracked with the blaster in 3D.*
+## 🕹️ Stage 1: Play the PC Game (The Baseline — 3 Mins)
 
-### Step 1.1: Open the VR Pawn
+*Goal: Play and understand the target shooting game on desktop before touching VR.*
+
 1. In the Content Drawer, navigate to:  
-   `Content/TargetGame/VR_MR/Blueprints/`
-2. Double-click to open **`BP_VRPawn`** *(pre-created for you — no folder or asset creation needed!)*.
-3. Verify the component hierarchy:
-   ```text
-   [Root] DefaultSceneRoot
-      └── VROrigin (Scene Component)
-           ├── Camera (Camera Component)
-           ├── MotionController_L (Motion Controller, MotionSource = LeftAim)
-           └── MotionController_R (Motion Controller, MotionSource = RightAim)
-   ```
-4. In **BeginPlay** of `BP_VRPawn`:
-   - Connect `BeginPlay` ➔ **`Set Tracking Origin`** ➔ select **Floor Level** (matches player height to the real room floor).
-   - Drag from `Set Tracking Origin` ➔ call **`Execute Console Command`** ➔ Command: `r.PostProcessing.PropagateAlpha 1` *(automatically turns on Passthrough transparency the moment you enter VR!)*.
-5. In **EndPlay** of `BP_VRPawn`:
-   - Connect `EndPlay` ➔ **`Execute Console Command`** ➔ Command: `r.PostProcessing.PropagateAlpha 0` *(automatically restores the beautiful blue PC sky when you stop playing!)*.
+   `Content/FirstPerson/Maps/` ➔ Double-click **`FirstPersonMap`**.
+2. Click the green **Play** button on the top toolbar to play directly in the editor viewport.
+3. **Controls:**
+   - **`W`, `A`, `S`, `D`**: Move around the 3D arena.
+   - **`Mouse`**: Look around.
+   - **`Left Mouse Click`**: Shoot the blaster rifle at targets.
+4. Shoot a target — notice how the projectile flies and the target shatters into pieces!
+5. Press **`Esc`** on the keyboard to exit play mode.
 
-### Step 1.2: The Drag & Drop Snap
-1. In the Content Drawer, open:  
-   `Content/FPWeapon/Mesh/`
-2. **Click and drag `SK_FPGun`** directly into the **Components** panel on the top-left, and **drop it onto `MotionController_R`**.
-3. In the Details panel for `SK_FPGun`:
-   - Set **Location**: `(X=0, Y=0, Z=0)`
-   - Set **Rotation**: `(Pitch=0.0, Yaw=0.0, Roll=-90.0)` *(aligns the blaster barrel forward along your hand)*.
-4. With `SK_FPGun` selected, click **+ Add** ➔ add an **Arrow Component** named **`Muzzle`**:
-   - In Details: Set **Location** to `(X=60, Y=0, Z=10)` *(places the spawn point right at the blaster tip)*.
-5. **Compile & Save**.
+> **💡 Learning Takeaway:**  
+> In a traditional PC game, the camera is locked to your 2D mouse, and the gun is glued to a fixed position on the screen.
 
 ---
 
-## 🔫 Student Module 2: Pull the Trigger to Shoot (10 Mins)
-*Goal: 2 simple nodes to connect the Quest controller trigger to firing projectiles.*
+## 🥽 Stage 2: The VR Upgrade (From Screen to 6DOF Hands — 7 Mins)
 
-### Step 2.1: The 2-Wire Event Graph
-In `BP_VRPawn` ➔ **Event Graph**:
+*Goal: Upgrade the game to full Virtual Reality. Step inside the arena, hold the blaster in your tracked physical right hand, and pull the controller trigger to shoot.*
 
-```text
-[ Oculus Touch (R) Trigger - Pressed ]
-             │
-             ▼
-   [ SpawnActor BP_FirstPersonProjectile ]
-             │
-             ├── Spawn Transform: [ Get World Transform (from Muzzle) ]
-             └── Collision Handling: Always Spawn, Ignore Collisions
-```
-
-#### How to Drag & Drop this:
-1. Right-click on graph ➔ search for **`Oculus Touch (R) Trigger`** (or `IA_Shoot_VR`).
-2. Pull out the **Pressed** pin ➔ release and pick **`Spawn Actor from Class`**.
-3. From the Content Drawer (`Content/FirstPerson/Blueprints/`), **drag `BP_FirstPersonProjectile`** directly onto the **Class** pin.
-4. From the Components panel on the left, **drag `Muzzle`** into the graph.
-5. Drag out from `Muzzle` ➔ pick **`Get World Transform`** ➔ wire into **`Spawn Transform`**.
-6. On the `SpawnActor` node: Set **Collision Handling Override** to **`Always Spawn, Ignore Collisions`** *(prevents the bullet from colliding with your own blaster on frame 0)*.
-7. *(Optional Audio)*: Pull from SpawnActor ➔ add **`Play Sound at Location`** ➔ select `FirstPersonTemplateWeaponFire02`.
-
-### Step 2.2: Test in VR
-1. Hit **VR Preview**.
-2. Put on the headset, squeeze the right trigger.
-3. The projectile shoots forward and bounces off surfaces!
+### Step 2.1: Open `BP_VRPawn` & Snap the Blaster to Your Hand
+1. In the Content Drawer, navigate to:  
+   `Content/TargetGame/VR_MR/Blueprints/` ➔ Double-click **`BP_VRPawn`**.
+2. Look at the **Components** panel on the top-left:
+   - Notice the VR tracking rig: `VROrigin` ➔ `Camera` (your head), `MotionController_L`, and `MotionController_R` (your hands).
+   - Click **`MotionController_R`**. In the **Details** panel on the right, verify **Motion Source** is set to **`RightAim`** *(ensures it tracks your right hand!)*.
+3. **Snap the Blaster to Your Hand:**
+   - In Content Drawer, open: `Content/FPWeapon/Mesh/`.
+   - **Drag `SK_FPGun`** into the Components panel and **drop it directly onto `MotionController_R`**.
+   - With `SK_FPGun` selected, look at the **Details** panel:
+     - **Location**: `(X=0.0, Y=0.0, Z=0.0)`
+     - **Rotation**: `(Pitch=0.0, Yaw=0.0, Roll=-90.0)` *(aligns the blaster barrel straight along your hand)*.
+4. **Add the Muzzle Spawn Point:**
+   - With `SK_FPGun` selected, click **`+ Add`** ➔ search for and add an **Arrow Component**.
+   - Rename the arrow to **`Muzzle`**.
+   - In Details: Set its **Location** to: `(X=60.0, Y=0.0, Z=10.0)` *(places the spawn point right at the tip of the barrel)*.
 
 ---
 
-## 🪟 Student Module 3: Mixed Reality Passthrough Magic (10 Mins)
-*Goal: Remove the virtual world and shoot targets floating inside the actual classroom!*
+### Step 2.2: Wire the Controller Trigger to Shoot
+1. In `BP_VRPawn`, switch to the **Event Graph** tab.
+2. **Hook Up BeginPlay (Activates the VR Input Mapping Context):**
+   - Connect `Event BeginPlay` ➔ **`Set Tracking Origin`** ➔ select **Local Floor** *(sets height to real floor)*.
+   - Drag from the output execution pin ➔ search for **`Get Player Controller`** (Player Index = 0).
+   - Drag from its Return Value ➔ search for **`Enhanced Input Local Player Subsystem`**.
+   - Drag from the subsystem pin ➔ search for **`Add Mapping Context`**.
+   - On the `Add Mapping Context` node: Set **Mapping Context** to **`IMC_VR`**.
+   - Connect the white execution line into `Add Mapping Context`.
 
-### Step 3.1: Add the Passthrough Component
+3. **Wire the Trigger Shoot Event:**
+   - Right-click anywhere in the graph ➔ search for: **`Enhanced Action Events ➔ IA_Shoot_VR`**.
+   - Drag out from the **Triggered** pin ➔ search for and add **`Spawn Actor from Class`**.
+   - On the `SpawnActor` node:
+     - **Class**: Select **`BP_FirstPersonProjectile`**.
+     - **Collision Handling Override**: Select **`Always Spawn, Ignore Collisions`** *(prevents the bullet from colliding with your own blaster mesh on frame 0)*.
+   - From the Components panel on the left, **drag `Muzzle`** into the graph.
+   - Drag from `Muzzle` ➔ search for **`Get World Transform`** ➔ connect its Return Value to **`Spawn Transform`**.
+4. Click **Compile** and **Save** on the top toolbar.
+
+---
+
+### Step 2.3: Swap the Pawn in `FirstPersonMap` & Play in VR!
+1. Switch back to the **`FirstPersonMap`** tab.
+2. Look for the **World Settings** panel on the right *(if hidden: top menu **Window ➔ World Settings**)*.
+3. In **World Settings**:
+   - Under **GameMode Override**, expand the selected game mode.
+   - Change **Default Pawn Class** from `BP_FirstPersonCharacter` to **`BP_VRPawn`**.
+4. On the top toolbar, click the **`...`** (three dots) next to the Play button ➔ choose **VR Preview**.
+5. Put on the Meta Quest headset:
+   - **🎉 The VR Upgrade Moment:** You are standing inside the *exact same 3D level* you just played on desktop!
+   - Look down at your right hand: you hold the blaster in 3D space!
+   - Aim your arm and squeeze the Quest controller trigger: projectiles fire into the arena!
+6. Take off the headset and press **`Esc`** on the PC keyboard to stop.
+
+---
+
+## 🌌 Stage 3: The Mixed Reality Transformation (7 Mins)
+
+*Goal: Punch through the virtual world! Peel away the virtual sky and arena to let your real physical classroom show through using Meta Quest Passthrough.*
+
+> **💡 The Concept — Why Can't We See the Room Yet?**  
+> The Meta Quest headset has real-time cameras that project your room **behind** the game (Underlay).  
+> In VR, the 3D sky, clouds, and arena walls are completely opaque and block the camera feed.  
+> The moment you remove the virtual sky, **your real physical room punches through!**
+
+---
+
+### Step 3.1: Branch the Level for Mixed Reality
+1. In Unreal Editor, go to the top menu: **File ➔ Save Current Level As...**
+2. In the file dialog, navigate to: `Content/TargetGame/VR_MR/Levels/`.
+3. Name the level **`LVL_TargetGame_MR`** and click **Save**.  
+   *(Now you have your dedicated MR level while keeping your original PC arena safe!)*
+
+---
+
+### Step 3.2: Turn On the Real-World Camera Feed
 1. Open **`BP_VRPawn`**.
-2. Click **+ Add Component** ➔ search for **`OculusXRPassthroughLayer`**.
-3. In Details:
-   - Verify **Passthrough Layer Type** is set to `Underlay` (default).
-
-### Step 3.2: Open the MR Level
-1. In the Content Drawer, navigate to:  
-   `Content/TargetGame/VR_MR/Levels/`
-2. Double-click to open **`LVL_TargetGame_MR`** *(pre-created for you — no folder or level creation needed!)*.
-3. In **World Settings** (Window ➔ World Settings):
-   - **GameMode Override**: `BP_TargetGameMode`
-   - **Default Pawn Class**: `BP_VRPawn`
-4. Add lighting for the targets:
-   - Place a simple **Directional Light** into the level.
-   - **Important:** Do **NOT** add a SkySphere, SkyAtmosphere, or ExponentialHeightFog. An empty black background outputs `Alpha = 0`, allowing the real-world Passthrough camera feed to shine through!
-
-### Step 3.3: Drag & Drop Targets Around the Room
-1. In Content Drawer, open:  
-   `Content/TargetGame/Blueprints/`
-2. **Drag and drop `BP_Target`** 3 to 5 times directly into the 3D level viewport:
-   - Drag one above the teacher's desk.
-   - Drag one near the door.
-   - Drag one floating near a classmate.
-   - Keep them at comfortable eye heights (Z: 120 cm to 180 cm).
+2. In the Components panel, click **`+ Add`**.
+3. Search for: **`OculusXRPassthroughLayer`** and add it.
+4. In Details: verify **Passthrough Layer Type** is set to **`Underlay`**.
+5. Click **Compile & Save**.
 
 ---
 
-## 🏆 The Climax: Play & Win!
+### Step 3.3: Peel Away the Virtual Sky & Walls
+1. Make sure you are in **`LVL_TargetGame_MR`**.
+2. Look at the **Outliner** panel on the top-right:
+3. Select and **Delete (`Delete` key)** the virtual background actors:
+   - ❌ **`SkyAtmosphere`**
+   - ❌ **`VolumetricCloud`**
+   - ❌ **`ExponentialHeightFog`**
+   - ❌ The outer arena boxes and walls *(delete the outer walls and floor so your real classroom is visible!)*.
+4. **⚠️ DO NOT DELETE:**
+   - ✅ **`DirectionalLight`** *(Crucial! Without this light, your blaster and targets have zero illumination and appear pure black)*.
+   - ✅ **`PlayerStart`** *(Defines where you stand in the room)*.
 
-1. Click **VR Preview**.
-2. Hand the headset to the student.
-3. **The Wow Moment**:
+---
+
+### Step 3.4: Place Real-Room Targets
+1. In the Content Drawer, navigate to:  
+   `Content/TargetGame/Blueprints/`
+2. **Drag and drop `BP_Target` 3 to 5 times** directly into the level viewport:
+   - Drag one floating in front of where you stand.
+   - Drag one to the left, near the door.
+   - Drag one above a classmate's desk.
+   - Keep them at comfortable eye heights (Z: 120 cm to 180 cm).
+3. Save the level (**`Ctrl + S`**).
+
+---
+
+## 🏆 The Climax: Experience Mixed Reality!
+
+1. On the top toolbar, click the **`...`** (three dots) next to Play ➔ select **VR Preview**.
+2. Put on the Meta Quest headset.
+3. **✨ The Wow Moment:**
    - The virtual world is gone.
-   - The student sees their actual classroom and friends through the Quest cameras in real-time.
-   - In front of them float the 3D targets.
-   - They aim the blaster, squeeze the trigger:
-     - **PEW!** The projectile flies through their real room.
-     - **CRACK!** The target shatters into physical Chaos shards.
-     - The debug notification displays **"Win!!!"**.
+   - You see your **actual physical classroom, your desk, and your friends** through the Quest cameras in real-time!
+   - Floating in mid-air in front of you are the glowing 3D targets.
+   - Aim your blaster, pull the Quest controller trigger:
+     - **PEW!** The projectile flies through your physical room.
+     - **CRACK!** The target shatters into real-time physics shards right in front of your friends!
+     - The scoreboard records the hit!
 
 ---
 
@@ -177,9 +221,10 @@ In `BP_VRPawn` ➔ **Event Graph**:
 
 | Issue | Root Cause | Quick Fix |
 |---|---|---|
-| Black screen in headset / Passthrough not showing | Link Passthrough toggle disabled in PC app | In Oculus PC App ➔ `Settings ➔ Beta`: verify **Enable Passthrough over Meta Quest Link** is turned **ON**. |
-| Blaster points sideways or towards the floor | Skeletal mesh default bone offset | In `BP_VRPawn`, select `SK_FPGun` and set Rotation to `(Pitch=0, Yaw=0, Roll=-90)`. |
-| Projectile disappears or hits player's hand instantly | Frame-0 collision overlap with gun | On `SpawnActor`, set **Collision Handling Override** to `Always Spawn, Ignore Collisions`, and ensure `Muzzle` Arrow is placed at `X=60`. |
-| Player view is at floor level (crawling) | Missing tracking origin node | In `BP_VRPawn` BeginPlay, ensure `Set Tracking Origin` is called with **Floor Level**. |
-| Virtual sky/blackness covers the room | Opaque sky actor in the level | Delete any `SkySphere`, `SkyAtmosphere`, or `ExponentialHeightFog` from the level so the background clears to alpha 0. |
-| PC monitor shows black sky with floating clouds | `PropagateAlpha=1` punches out sky for MR Passthrough | **Expected behavior.** In the Quest headset, that black area is your real room! To view the blue sky on PC, run console command: `r.PostProcessing.PropagateAlpha 0`. |
+| Headset view is completely pitch black | Meta Quest Link PC app blocked cameras | In the Oculus desktop app on PC: **Settings ➔ Beta**: turn **Enable Passthrough over Meta Quest Link** to **ON**. |
+| Blaster appears attached to the left hand | `MotionController_R` has default motion source | In `BP_VRPawn`, select `MotionController_R` and set **Motion Source** to **`RightAim`**. |
+| Blaster points sideways or towards the floor | Skeletal mesh bone orientation | In `BP_VRPawn`, select `SK_FPGun` and set Rotation to `(Pitch=0, Yaw=0, Roll=-90)`. |
+| Projectile disappears or hits player's hand instantly | Frame-0 collision overlap with gun mesh | On `SpawnActor`, set **Collision Handling Override** to **`Always Spawn, Ignore Collisions`**, and verify `Muzzle` is at `X=60`. |
+| Targets and blaster are completely black | Missing light source | In `LVL_TargetGame_MR`, ensure a **Directional Light** is in the level (Quick Add ➔ Lights ➔ Directional Light). |
+| Virtual sky/blackness covers the physical room | Opaque sky actor still in the level | In `LVL_TargetGame_MR` Outliner, delete `SkyAtmosphere`, `VolumetricCloud`, and `ExponentialHeightFog`. |
+| Trigger does nothing | Enhanced Input mapping not added | In `BP_VRPawn` BeginPlay, ensure `Enhanced Input Local Player Subsystem` calls `Add Mapping Context` with `IMC_VR`. |
