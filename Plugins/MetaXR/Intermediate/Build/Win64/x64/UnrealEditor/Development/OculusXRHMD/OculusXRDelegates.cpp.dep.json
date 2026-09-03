@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrhmd\\private\\oculusxrdelegates.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\works_repo\\target_mr_claude\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\oculusxrhmd\\definitions.oculusxrhmd.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrhmd\\private\\oculusxrdelegates.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

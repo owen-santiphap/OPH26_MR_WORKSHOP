@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\oculusxrtelemetry\\module.oculusxrtelemetry.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\works_repo\\target_mr_claude\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\oculusxrtelemetry\\definitions.oculusxrtelemetry.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxrtelemetry\\uht\\oculusxrtelemetry.init.gen.cpp",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxrtelemetry\\uht\\oculusxrtelemetryprivacysettings.gen.cpp",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrtelemetry\\private\\oculusxrtelemetryprivacysettings.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\engine\\classes\\engine\\importanttogglesettinginterface.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\importanttogglesettinginterface.generated.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxrtelemetry\\uht\\oculusxrtelemetryprivacysettings.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

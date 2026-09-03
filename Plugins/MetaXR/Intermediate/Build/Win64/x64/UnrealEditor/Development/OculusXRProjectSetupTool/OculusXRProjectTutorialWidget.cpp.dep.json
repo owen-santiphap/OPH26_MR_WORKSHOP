@@ -1,0 +1,26 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrprojectsetuptool\\private\\widget\\oculusxrprojecttutorialwidget.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\works_repo\\target_mr_claude\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\oculusxrprojectsetuptool\\definitions.oculusxrprojectsetuptool.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrprojectsetuptool\\private\\widget\\oculusxrprojecttutorialwidget.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrprojectsetuptool\\private\\oculusxrprojectsetuptoolmodule.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrprojectsetuptool\\public\\ioculusxrprojectsetupmodule.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrprojectsetuptool\\private\\oculusxrpstevents.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrtelemetry\\public\\oculusxrtelemetrymarker.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrtelemetry\\public\\oculusxrtelemetryshared.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrtelemetry\\public\\oculusxrqpl.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrtelemetry\\public\\oculusxrtelemetry.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrprojectsetuptool\\public\\oculusxrpstsettings.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrprojectsetuptool\\public\\oculusxrsetuprule.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxrprojectsetuptool\\uht\\oculusxrsetuprule.generated.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxrprojectsetuptool\\uht\\oculusxrpstsettings.generated.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\slatecore\\public\\styling\\slatestylemacros.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

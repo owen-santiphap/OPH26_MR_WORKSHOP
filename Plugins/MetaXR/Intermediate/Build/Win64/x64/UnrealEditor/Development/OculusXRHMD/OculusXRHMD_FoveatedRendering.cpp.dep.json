@@ -1,0 +1,36 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrhmd\\private\\oculusxrhmd_foveatedrendering.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\works_repo\\target_mr_claude\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\oculusxrhmd\\definitions.oculusxrhmd.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrhmd\\private\\oculusxrhmd_foveatedrendering.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\core\\public\\misc\\engineversioncomparison.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\renderer\\public\\variablerateshadingimagemanager.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\plugins\\runtime\\xrbase\\source\\xrbase\\public\\xrswapchain.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\headmounteddisplay\\public\\headmounteddisplaytypes.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\headmounteddisplay\\public\\imotioncontroller.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\headmounteddisplay\\uht\\imotioncontroller.generated.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\headmounteddisplay\\uht\\headmounteddisplaytypes.generated.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\rendercore\\public\\rendergraphbuilder.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\rendercore\\public\\rendergraphblackboard.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\core\\public\\misc\\generatedtypename.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\rendercore\\public\\rendergraphevent.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\rendercore\\public\\rendergraphevent.inl",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\rendercore\\public\\rendergraphpass.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\rendercore\\public\\rendergraphparameter.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\rendercore\\public\\rendergraphresources.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\rhi\\public\\rhitransientresourceallocator.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\rendercore\\public\\rendergraphresources.inl",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\rendercore\\public\\rendergraphparameters.inl",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\rendercore\\public\\rendergraphtrace.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\rendercore\\public\\rendergraphvalidation.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\core\\public\\experimental\\containers\\robinhoodhashtable.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\rendercore\\public\\rendergraphbuilder.inl"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

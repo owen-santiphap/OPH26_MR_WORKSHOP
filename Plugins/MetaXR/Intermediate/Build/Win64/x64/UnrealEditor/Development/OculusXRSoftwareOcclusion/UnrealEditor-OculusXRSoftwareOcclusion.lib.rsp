@@ -1,0 +1,16 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-OculusXRSoftwareOcclusion.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:/Works_REPO/Target_MR_Claude/Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h.obj"
+"E:/Works_REPO/Target_MR_Claude/Plugins/MetaXR/Intermediate/Build/Win64/x64/UnrealEditor/Development/OculusXRSoftwareOcclusion/Module.OculusXRSoftwareOcclusion.cpp.obj"
+"E:/Works_REPO/Target_MR_Claude/Plugins/MetaXR/Intermediate/Build/Win64/x64/UnrealEditor/Development/OculusXRSoftwareOcclusion/OccluderMeshAssetUserData.cpp.obj"
+"E:/Works_REPO/Target_MR_Claude/Plugins/MetaXR/Intermediate/Build/Win64/x64/UnrealEditor/Development/OculusXRSoftwareOcclusion/OculusXRSoftwareOcclusionModule.cpp.obj"
+"E:/Works_REPO/Target_MR_Claude/Plugins/MetaXR/Intermediate/Build/Win64/x64/UnrealEditor/Development/OculusXRSoftwareOcclusion/SceneSoftwareOcclusion.cpp.obj"
+"E:/Works_REPO/Target_MR_Claude/Plugins/MetaXR/Intermediate/Build/Win64/x64/UnrealEditor/Development/OculusXRSoftwareOcclusion/SceneSoftwareOcclusionProvider.cpp.obj"
+"E:/Works_REPO/Target_MR_Claude/Plugins/MetaXR/Intermediate/Build/Win64/x64/UnrealEditor/Development/OculusXRSoftwareOcclusion/Default.rc2.res"
+/OUT:"E:/Works_REPO/Target_MR_Claude/Plugins/MetaXR/Intermediate/Build/Win64/x64/UnrealEditor/Development/OculusXRSoftwareOcclusion/UnrealEditor-OculusXRSoftwareOcclusion.lib"

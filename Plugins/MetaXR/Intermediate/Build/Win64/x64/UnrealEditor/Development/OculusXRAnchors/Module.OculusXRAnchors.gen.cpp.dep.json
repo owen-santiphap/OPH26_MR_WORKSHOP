@@ -1,0 +1,41 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\oculusxranchors\\module.oculusxranchors.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\works_repo\\target_mr_claude\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\oculusxranchors\\definitions.oculusxranchors.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxranchors\\uht\\oculusxranchorbpfunctionlibrary.gen.cpp",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxranchors\\public\\oculusxranchorbpfunctionlibrary.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\engine\\classes\\kismet\\blueprintasyncactionbase.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\blueprintasyncactionbase.generated.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxranchors\\public\\oculusxranchortypes.h",
+            "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\memory",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxranchors\\uht\\oculusxranchortypes.generated.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxranchors\\public\\oculusxranchorcomponents.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxranchors\\uht\\oculusxranchorcomponents.generated.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxranchors\\uht\\oculusxranchorbpfunctionlibrary.generated.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxranchors\\uht\\oculusxranchorcomponent.gen.cpp",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxranchors\\public\\oculusxranchorcomponent.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxranchors\\uht\\oculusxranchorcomponent.generated.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxranchors\\uht\\oculusxranchorcomponents.gen.cpp",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxranchors\\uht\\oculusxranchorlatentactions.gen.cpp",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxranchors\\public\\oculusxranchorlatentactions.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxranchors\\public\\oculusxranchors.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxranchors\\public\\oculusxranchorsrequests.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrasyncrequest\\public\\oculusxrasyncrequestsystem.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrasyncrequest\\public\\oculusxrasyncrequestbase.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrasyncrequest\\public\\oculusxrasyncrequest.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrasyncrequest\\public\\ioculusxrasyncrequestmodule.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxranchors\\uht\\oculusxranchorlatentactions.generated.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxranchors\\uht\\oculusxranchors.init.gen.cpp",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxranchors\\uht\\oculusxranchortypes.gen.cpp",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxranchors\\uht\\oculusxrspatialanchorcomponent.gen.cpp",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxranchors\\public\\oculusxrspatialanchorcomponent.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxranchors\\uht\\oculusxrspatialanchorcomponent.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

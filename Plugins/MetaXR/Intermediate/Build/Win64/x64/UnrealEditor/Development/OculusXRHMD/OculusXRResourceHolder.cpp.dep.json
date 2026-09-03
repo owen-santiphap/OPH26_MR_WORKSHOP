@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrhmd\\private\\oculusxrresourceholder.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\works_repo\\target_mr_claude\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\oculusxrhmd\\definitions.oculusxrhmd.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrhmd\\private\\oculusxrresourceholder.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxrhmd\\uht\\oculusxrresourceholder.generated.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\headmounteddisplay\\public\\headmounteddisplaytypes.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\headmounteddisplay\\public\\imotioncontroller.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\headmounteddisplay\\uht\\imotioncontroller.generated.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\headmounteddisplay\\uht\\headmounteddisplaytypes.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

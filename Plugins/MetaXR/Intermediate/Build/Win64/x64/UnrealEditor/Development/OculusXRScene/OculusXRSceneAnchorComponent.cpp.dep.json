@@ -1,0 +1,22 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrscene\\private\\oculusxrsceneanchorcomponent.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\works_repo\\target_mr_claude\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\oculusxrscene\\definitions.oculusxrscene.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrscene\\public\\oculusxrsceneanchorcomponent.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxranchors\\public\\oculusxranchorcomponent.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxranchors\\public\\oculusxranchortypes.h",
+            "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\memory",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxranchors\\uht\\oculusxranchortypes.generated.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxranchors\\uht\\oculusxranchorcomponent.generated.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxrscene\\uht\\oculusxrsceneanchorcomponent.generated.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\engine\\classes\\engine\\staticmeshactor.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\staticmeshactor.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

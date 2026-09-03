@@ -1,0 +1,20 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\mrutilitykit\\private\\mrutilitykittrackable.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\works_repo\\target_mr_claude\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\mrutilitykit\\definitions.mrutilitykit.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\mrutilitykit\\public\\mrutilitykittrackable.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxranchors\\public\\oculusxranchortypes.h",
+            "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\memory",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxranchors\\uht\\oculusxranchortypes.generated.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\mrutilitykit\\public\\mrutilitykit.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\mrutilitykit\\uht\\mrutilitykit.generated.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\mrutilitykit\\uht\\mrutilitykittrackable.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

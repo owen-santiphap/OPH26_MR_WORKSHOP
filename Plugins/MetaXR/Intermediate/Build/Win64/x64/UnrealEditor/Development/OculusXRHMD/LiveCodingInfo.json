@@ -1,0 +1,27 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.OculusXRHMD.1.cpp.obj": [
+			"OculusXREventComponent.gen.cpp.obj",
+			"OculusXRFunctionLibrary.gen.cpp.obj",
+			"OculusXRHMD.init.gen.cpp.obj",
+			"OculusXRHMDRuntimeSettings.gen.cpp.obj"
+		],
+		"Module.OculusXRHMD.2.cpp.obj": [
+			"OculusXRHMDTypes.gen.cpp.obj",
+			"OculusXRMultiPlayerTestingSubsystem.gen.cpp.obj",
+			"OculusXROSVersions.gen.cpp.obj",
+			"OculusXRPassthroughLayerShapes.gen.cpp.obj",
+			"OculusXRResourceHolder.gen.cpp.obj",
+			"OculusXRSceneCaptureCubemap.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
+			"OculusXRAssetManager.cpp.obj",
+			"OculusXRDelegates.cpp.obj",
+			"OculusXREventComponent.cpp.obj",
+			"OculusXRFunctionLibrary.cpp.obj",
+			"OculusXRFunctionLibraryOpenXR.cpp.obj",
+			"OculusXRFunctionLibraryOVR.cpp.obj",
+			"OculusXRHMD.cpp.obj"
+		]
+	}
+}

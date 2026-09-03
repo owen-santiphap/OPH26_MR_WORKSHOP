@@ -1,0 +1,30 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrmovement\\private\\oculusxrlivelinkretargetfaceasset.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\works_repo\\target_mr_claude\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\oculusxrmovement\\definitions.oculusxrmovement.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrmovement\\public\\oculusxrlivelinkretargetfaceasset.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\livelinkanimationcore\\public\\livelinkretargetasset.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\livelinkanimationcore\\uht\\livelinkretargetasset.generated.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrmovement\\public\\oculusxrmovementtypes.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxrmovement\\uht\\oculusxrmovementtypes.generated.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\core\\public\\misc\\engineversioncomparison.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrmovement\\public\\oculusxranimcurvemapping.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxrmovement\\uht\\oculusxranimcurvemapping.generated.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxrmovement\\uht\\oculusxrlivelinkretargetfaceasset.generated.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\livelinkinterface\\public\\livelinktypes.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\livelinkinterface\\public\\livelinkrefskeleton.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\livelinkinterface\\uht\\livelinkrefskeleton.generated.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\livelinkinterface\\uht\\livelinktypes.generated.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\core\\public\\algo\\foreach.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrmovement\\public\\oculusxrmovement.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrmovement\\public\\oculusxrmovementfunctions.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrmovement\\private\\oculusxrmovementlog.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

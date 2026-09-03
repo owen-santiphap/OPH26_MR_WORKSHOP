@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-OculusXRUncookedOnly.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:/Works_REPO/Target_MR_Claude/Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.h.obj"
+"E:/Works_REPO/Target_MR_Claude/Plugins/MetaXR/Intermediate/Build/Win64/x64/UnrealEditor/Development/OculusXRUncookedOnly/Module.OculusXRUncookedOnly.cpp.obj"
+"E:/Works_REPO/Target_MR_Claude/Plugins/MetaXR/Intermediate/Build/Win64/x64/UnrealEditor/Development/OculusXRUncookedOnly/BPNode_InitializePersistentPassthrough.cpp.obj"
+"E:/Works_REPO/Target_MR_Claude/Plugins/MetaXR/Intermediate/Build/Win64/x64/UnrealEditor/Development/OculusXRUncookedOnly/OculusXRUncookedOnlyModule.cpp.obj"
+"E:/Works_REPO/Target_MR_Claude/Plugins/MetaXR/Intermediate/Build/Win64/x64/UnrealEditor/Development/OculusXRUncookedOnly/Default.rc2.res"
+/OUT:"E:/Works_REPO/Target_MR_Claude/Plugins/MetaXR/Intermediate/Build/Win64/x64/UnrealEditor/Development/OculusXRUncookedOnly/UnrealEditor-OculusXRUncookedOnly.lib"

@@ -1,0 +1,69 @@
+{
+    "version": "2.1.0",
+    "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+    "runs": [
+        {
+            "results": [
+                {
+                    "ruleId": "C4996",
+                    "message": {
+                        "text": "'FPrimitiveSceneProxy::GetNaniteResourceInfo': This interface will be removed in a future release. Use Nanite::FSceneProxyBase::GetResourcePrimitiveInfo instead. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile."
+                    },
+                    "analysisTarget": {
+                        "uri": "file:///E:/Works_REPO/Target_MR_Claude/Plugins/MetaXR/Source/OculusXRSoftwareOcclusion/Private/SceneSoftwareOcclusionProvider.cpp"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "file:///C:/Program Files/Epic Games/UE_5.7/Engine/Source/Runtime/Engine/Public/NaniteSceneProxy.h"
+                                },
+                                "region": {
+                                    "startLine": 396,
+                                    "startColumn": 15,
+                                    "snippet": {
+                                        "text": "\tvirtual void GetNaniteResourceInfo(uint32& OutResourceID, uint32& OutHierarchyOffset, uint32& OutImposterIndex) const override"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "ruleId": "C4996",
+                    "message": {
+                        "text": "'FSceneInterface::ProcessAndRenderIlluminanceMeter': This method has been refactored to be a proper visualization post process. It should have never been added on the FSceneInterface in the first place. - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile."
+                    },
+                    "analysisTarget": {
+                        "uri": "file:///E:/Works_REPO/Target_MR_Claude/Plugins/MetaXR/Source/OculusXRSoftwareOcclusion/Private/SceneSoftwareOcclusionProvider.cpp"
+                    },
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "file:///C:/Program Files/Epic Games/UE_5.7/Engine/Source/Runtime/Renderer/Private/ScenePrivate.h"
+                                },
+                                "region": {
+                                    "startLine": 3448,
+                                    "startColumn": 15,
+                                    "snippet": {
+                                        "text": "\tvirtual void ProcessAndRenderIlluminanceMeter(FRDGBuilder& GraphBuilder, TArrayView<FViewInfo> Views, FRDGTextureRef SceneColorTexture);"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            ],
+            "tool": {
+                "driver": {
+                    "name": "MSVC",
+                    "shortDescription": {
+                        "text": "Microsoft Visual C++ Compiler Warnings/Errors"
+                    },
+                    "informationUri": "https://docs.microsoft.com/cpp/error-messages/compiler-errors-1/c-cpp-build-errors"
+                }
+            }
+        }
+    ]
+}

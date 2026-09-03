@@ -1,0 +1,66 @@
+# ==========================================
+# Unreal Engine 5 .gitignore
+# Specially tailored for VR / MR Workshop
+# ==========================================
+
+# ------------------------------------------
+# Machine-Specific & Cache Folders (Never track)
+# ------------------------------------------
+DerivedDataCache/
+Intermediate/
+Saved/
+.vs/
+.idea/
+.vscode/
+
+# Project Root Binaries (Blueprint projects do not have root binaries)
+Binaries/
+
+# ------------------------------------------
+# Plugin Handling
+# Keep pre-compiled DLLs so student PCs without Visual Studio can run out of the box!
+# Exclude heavy debug symbol files (.pdb) to save 1.2+ GB.
+# ------------------------------------------
+Plugins/*/Intermediate/
+*.pdb
+
+# ------------------------------------------
+# Build Outputs & Packaging
+# ------------------------------------------
+Build/
+*.apk
+*.aab
+*.exe
+*.o
+*.obj
+
+# ------------------------------------------
+# OS & Editor Junk
+# ------------------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.log
+*.dmp
+*.crashreport
+
+# Visual Studio solution files
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+
+# ------------------------------------------
+# SETTINGS PRESERVATION (CRITICAL)
+# Ensure all workshop settings are tracked
+# ------------------------------------------
+!Config/
+!Config/Default*.ini
+!VR_MR_Workshop.uproject
+!Content/
+!Content/**
+!Plugins/
+!Plugins/**

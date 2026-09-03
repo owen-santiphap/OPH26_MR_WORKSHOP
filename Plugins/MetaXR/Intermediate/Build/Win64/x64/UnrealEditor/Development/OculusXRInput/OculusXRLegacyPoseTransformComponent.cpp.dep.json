@@ -1,0 +1,29 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrinput\\private\\oculusxrlegacyposetransformcomponent.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\works_repo\\target_mr_claude\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\oculusxrinput\\definitions.oculusxrinput.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrinput\\public\\oculusxrlegacyposetransformcomponent.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\intermediate\\build\\win64\\unrealeditor\\inc\\oculusxrinput\\uht\\oculusxrlegacyposetransformcomponent.generated.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\oculusxrhmd\\private\\openxr\\oculusxropenxrutilities.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\thirdparty\\khronosopenxr\\include\\khronos\\openxr\\openxr.h",
+            "e:\\works_repo\\target_mr_claude\\plugins\\metaxr\\source\\thirdparty\\khronosopenxr\\include\\khronos\\openxr\\openxr_platform_defines.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\headmounteddisplay\\public\\headmounteddisplaytypes.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\headmounteddisplay\\public\\imotioncontroller.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\headmounteddisplay\\uht\\imotioncontroller.generated.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\headmounteddisplay\\uht\\headmounteddisplaytypes.generated.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\plugins\\runtime\\openxr\\source\\openxrhmd\\public\\openxrcore.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\thirdparty\\openxr\\include\\openxr\\openxr.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\thirdparty\\openxr\\include\\openxr\\openxr_reflection.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\thirdparty\\openxr\\include\\openxr\\openxr.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\headmounteddisplay\\public\\ixrtrackingsystem.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\source\\runtime\\headmounteddisplay\\public\\iidentifiablexrdevice.h",
+            "c:\\program files\\epic games\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\headmounteddisplay\\uht\\iidentifiablexrdevice.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
