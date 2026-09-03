@@ -125,7 +125,7 @@ Content/
 
 3. **Wire the Trigger Shoot Event:**
    - Right-click anywhere in the graph ➔ search for: **`Enhanced Action Events ➔ IA_Shoot_VR`**.
-   - Drag out from the **Triggered** pin ➔ search for and add **`Spawn Actor from Class`**.
+   - Drag out from the **Started** pin *(use **`Started`** so it fires once per trigger squeeze like a semi-auto pistol, instead of `Triggered` which machine-guns every frame)* ➔ search for and add **`Spawn Actor from Class`**.
    - On the `SpawnActor` node:
      - **Class**: Select **`BP_FirstPersonProjectile`**.
      - **Collision Handling Override**: Select **`Always Spawn, Ignore Collisions`** *(prevents the bullet from colliding with your own blaster mesh on frame 0)*.
